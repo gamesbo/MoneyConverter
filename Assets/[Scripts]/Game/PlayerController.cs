@@ -13,12 +13,17 @@ public class PlayerController : MonoBehaviour
     public int gunLevel;
     public bool isGameOver = false;
     public TextMeshProUGUI gunLevelText;
-
+    public bool isFever = false;
+    public bool isFeverRight = false;
     [Header("Money")]
     public float moneyDestroyTime;
     public float moneySpawnTime;
     public float moneySpeed;
     public Transform moneySpawnPos;
+    public Transform feverStartPosRight;
+    public Transform feverStartPosLeft;
+    public Transform feverEndPos;
+
 
     #region Singleton
     public static PlayerController instance = null;
@@ -61,11 +66,45 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
         gunLevelText.text = "Lv." + gunLevel.ToString();
     }
+    public void FeverModeRight() 
+    {
+        Vector3 temp = transform.localPosition;
+        temp.x += InputManager.instance.input.x * Time.deltaTime * swerve;
+        temp.x = Mathf.Clamp(temp.x, 9f, 17f);
+        transform.localPosition = temp;
+
+        transform.Translate(Vector3.forward * 8.8f * Time.deltaTime);
+        gunLevelText.text = "Lv." + gunLevel.ToString();
+    }
+    public void FeverModeLeft()
+    {
+        Vector3 temp = transform.localPosition;
+        temp.x += InputManager.instance.input.x * Time.deltaTime * swerve;
+        temp.x = Mathf.Clamp(temp.x, -16f, -9f);
+        transform.localPosition = temp;
+
+        transform.Translate(Vector3.forward * 8.8f * Time.deltaTime);
+        gunLevelText.text = "Lv." + gunLevel.ToString();
+    }
     private void Update()
     {
         if (canMove)
         {
-            Movement();
+            if (!isFever)
+            {
+                Movement();
+            }
+            else
+            {
+                if (isFeverRight)
+                {
+                    FeverModeRight();
+                }
+                else
+                {
+                    FeverModeLeft();
+                }
+            }
         }
     }
     private void OnTriggerEnter(Collider other)

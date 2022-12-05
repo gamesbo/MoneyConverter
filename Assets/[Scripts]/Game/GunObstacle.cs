@@ -73,6 +73,38 @@ public class GunObstacle : MonoBehaviour
             other.GetComponent<Collider>().enabled = false;
             FireRange();
         }
+        if (other.CompareTag("StartFeverRight"))
+        {
+            CameraManager.instance.transform.DOMoveX(13f, 0.5f);
+            CameraManager.instance.fever = true;
+            PlayerController.instance.moneySpawnTime = 0.20f;
+            PlayerController.instance.transform.DOJump(PlayerController.instance.feverStartPosRight.position, 1, 1, 0.5f).OnComplete(() =>
+            {
+                PlayerController.instance.isFever = true;
+                PlayerController.instance.isFeverRight = true;
+            });
+        }
+        if (other.CompareTag("StartFeverLeft"))
+        {
+            CameraManager.instance.transform.DOMoveX(-13f, 0.5f);
+            CameraManager.instance.fever = true;
+            PlayerController.instance.moneySpawnTime = 0.20f;
+            PlayerController.instance.transform.DOJump(PlayerController.instance.feverStartPosLeft.position, 1, 1, 0.5f).OnComplete(() =>
+            {
+                PlayerController.instance.isFeverRight = false;
+                PlayerController.instance.isFever = true;
+            });
+        }
+        if (other.CompareTag("EndFever"))
+        {
+            CameraManager.instance.transform.DOMoveX(0f, 0.5f);
+            CameraManager.instance.fever = false;
+            PlayerController.instance.moneySpawnTime = 0.20f;
+            PlayerController.instance.transform.DOJump(PlayerController.instance.feverEndPos.position, 1, 1, 0.5f).OnComplete(() =>
+            {
+                PlayerController.instance.isFever = false;
+            });
+        }
         if (other.CompareTag("MoneyInBag"))
         {
             Instantiate(Resources.Load("particles/CloudMoney"),other.transform.position, Quaternion.identity);
