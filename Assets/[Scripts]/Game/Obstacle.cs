@@ -26,8 +26,6 @@ public class Obstacle : MonoBehaviour
           tw = parent.DOScale(new Vector3(parent.localScale.x + bounceFactor, parent.localScale.y + bounceFactor,
                 parent.localScale.z + bounceFactor), bounceSpeed).OnComplete(() =>
                {
-                   //parent.DOScale(new Vector3(parent.localScale.x - bounceFactor, parent.localScale.y - bounceFactor,
-                   //  parent.localScale.z - bounceFactor), bounceSpeed);
                    tw = null;
                });
             Destroy(money.gameObject);

@@ -56,12 +56,16 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         StartCoroutine(MoneyDelay());
     }
+    public bool isSwerve = true;
     public void Movement()
     {
-        Vector3 temp = transform.localPosition;
-        temp.x += InputManager.instance.input.x * Time.deltaTime * swerve;
-        temp.x = Mathf.Clamp(temp.x, -3.8f, 3.8f);
-        transform.localPosition = temp;
+        if (isSwerve)
+        {
+            Vector3 temp = transform.localPosition;
+            temp.x += InputManager.instance.input.x * Time.deltaTime * swerve;
+            temp.x = Mathf.Clamp(temp.x, -3.8f, 3.8f);
+            transform.localPosition = temp;
+        }
 
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
         gunLevelText.text = "Lv." + gunLevel.ToString();

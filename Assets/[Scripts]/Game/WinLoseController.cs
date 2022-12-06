@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using EKTemplate;
-using DG.Tweening;
 public class WinLoseController : MonoBehaviour
 {
     public ParticleSystem confetti;
@@ -26,12 +24,10 @@ public class WinLoseController : MonoBehaviour
     }
     IEnumerator WinDelay()
     {
-        PlayerController.instance.transform.DOMoveX(0, 0.5f);
-        PlayerController.instance.isGameOver = true;
-        confetti.Play();
-        yield return new WaitForSeconds(1.9f);
-        PlayerController.instance.canMove = false;
-        LevelManager.instance.Success();
+        PlayerController.instance.moneySpawnTime = 0.10f;
+        PlayerController.instance.moneyDestroyTime = 1f;
+        PlayerController.instance.moveSpeed = PlayerController.instance.moveSpeed + 1.25f;
+        yield return new WaitForSeconds(0.2f);
         Haptic.NotificationSuccessTaptic();
     }
     IEnumerator LoseDelay()

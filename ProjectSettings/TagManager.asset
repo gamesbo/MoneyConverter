@@ -14,6 +14,8 @@ TagManager:
   - EndFever
   - StartFeverRight
   - StartFeverLeft
+  - MoneyBreak
+  - Gun
   layers:
   - Default
   - TransparentFX
