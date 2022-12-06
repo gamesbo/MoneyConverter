@@ -3592,7 +3592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: -1
-  levelCount: 1
+  levelCount: 5
   levelLoopFrom: 1
   money: 0
   SpeedCost: 320000006400000096000000fa000000f4010000ee020000e2040000d6060000c4090000b20c0000a00f0000881300006a1800004c1d000034210000

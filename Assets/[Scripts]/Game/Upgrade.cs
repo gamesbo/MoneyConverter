@@ -50,10 +50,6 @@ public class Upgrade : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            GameManager.instance.AddMoney(1000);
-        }
         if (gm.speedLevel < 7)
         {
             if (gm.money >= gm.SpeedCost[gm.speedLevel + 1])

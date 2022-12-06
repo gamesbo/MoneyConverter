@@ -28220,7 +28220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5766079531696147405
 Transform:
   m_ObjectHideFlags: 0
@@ -33529,7 +33529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5766079532389005995
 Transform:
   m_ObjectHideFlags: 0
@@ -36138,7 +36138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5766079532578066274
 Transform:
   m_ObjectHideFlags: 0
@@ -55202,7 +55202,7 @@ PrefabInstance:
     - target: {fileID: 4404986246307028420, guid: f5e04043732625e4789b32469564a5fa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4404986246307028443, guid: f5e04043732625e4789b32469564a5fa,
         type: 3}
@@ -56773,6 +56773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Range Right - Rate Left (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404986246307028420, guid: f5e04043732625e4789b32469564a5fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4404986246307028443, guid: f5e04043732625e4789b32469564a5fa,
         type: 3}

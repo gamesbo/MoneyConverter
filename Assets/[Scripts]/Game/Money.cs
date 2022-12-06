@@ -46,7 +46,7 @@ public class Money : MonoBehaviour
         
         if (other.CompareTag("MoneyBag"))
         {
-            EKTemplate.GameManager.instance.AddMoney(50);
+            EKTemplate.GameManager.instance.AddMoney(1);
             PlayerController.instance.gunLevel += 3;
             PlayerController.instance.gunLevelText.transform.DOScale(0.75f, 0.2f).OnComplete(() =>
             {

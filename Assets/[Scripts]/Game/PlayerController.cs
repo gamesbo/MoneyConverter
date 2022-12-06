@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
         {
             Instantiate(Resources.Load("particles/CloudMoney"),other.transform.position, Quaternion.identity);
             other.transform.DOScale(Vector3.zero,.2f).OnComplete(()=> { Destroy(other.gameObject); });
-            GameManager.instance.AddMoney(50);
+            GameManager.instance.AddMoney(1);
 
             if (other.transform.parent.parent.parent.GetComponent<Car>() != null)
             {

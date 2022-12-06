@@ -109,7 +109,7 @@ public class GunObstacle : MonoBehaviour
         {
             Instantiate(Resources.Load("particles/CloudMoney"),other.transform.position, Quaternion.identity);
             Destroy(other.gameObject);
-            EKTemplate.GameManager.instance.AddMoney(10);
+            EKTemplate.GameManager.instance.AddMoney(1);
         }
     }
 }

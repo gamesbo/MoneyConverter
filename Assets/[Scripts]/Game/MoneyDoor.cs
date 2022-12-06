@@ -24,7 +24,6 @@ public class MoneyDoor : MonoBehaviour
             }
             else
             {
-                Debug.Log("1");
                 Instantiate(Resources.Load("Wall"),new Vector3(transform.position.x-2, transform.position.y, transform.position.z + 40f), Quaternion.identity);
                 GetComponent<Collider>().enabled = false;
                 Destroy(gameObject);
